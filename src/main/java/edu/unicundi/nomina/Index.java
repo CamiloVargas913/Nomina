@@ -23,7 +23,6 @@ public class Index implements Serializable{
     private String estudios;
     private String idiomas[];
     private int diasTrabajados;
-    private int sueldo;
     
     public Index() {
     }
@@ -89,12 +88,5 @@ public class Index implements Serializable{
         this.diasTrabajados = diasTrabajados;
     }
 
-    public int getSueldo() {
-        return sueldo;
-    }
-
-    public void setSueldo(int sueldo) {
-        this.sueldo = sueldo;
-    }
     
 }
