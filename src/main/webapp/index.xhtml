@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui" xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head></h:head>
+    <h:body>
+        <div class="ui-g">
+            <div class="ui-g-4">
+                <h3>Ingrese sus datos</h3>
+                <span class="ui-float-label">
+                    <p:outputLabel  value="Nombre: " />
+                    <p:inputText id="float-input" value="" />
+                </span><br></br><br></br>
+                <span class="ui-float-label">
+                    <p:outputLabel  value="Apellido: " />
+                    <p:inputText id="float-input" value="" />
+                </span><br></br><br></br>
+                <span class="ui-float-label">
+                    <p:outputLabel  value="Numero de documento: " />
+                    <p:inputText id="float-input" value="" />
+                </span><br></br><br></br>
+                <span class="ui-float-label">
+                    <p:outputLabel  value="Fecha nacimiento: " />
+                    <p:inputText id="float-input" value="" />
+                </span><br></br><br></br>
+                <span class="ui-float-label">
+                    <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+                        <p:outputLabel for="console" value="Nivel de estudios: " />
+                        <p:selectOneMenu id="console" value="" style="width:125px">
+                            <f:selectItem itemLabel="Primaria" itemValue="" />
+                            <f:selectItem itemLabel="Secundaria" itemValue="Xbox One" />
+                            <f:selectItem itemLabel="Tecnico" itemValue="PS4" />
+                            <f:selectItem itemLabel="Tecnologo" itemValue="Wii U" />
+                            <f:selectItem itemLabel="Profesional" itemValue="Wii U" />
+                            <f:selectItem itemLabel="Magister" itemValue="Wii U" />
+                        </p:selectOneMenu>
+                    </h:panelGrid>
+                </span><br></br><br></br>
+                <span class="ui-float-label">
+                    <p:selectManyMenu id="basic">
+                        <f:selectItem itemLabel="Ninguno" itemValue="1" />
+                        <f:selectItem itemLabel="Ingles" itemValue="1" />
+                        <f:selectItem itemLabel="Frances" itemValue="2" />
+                        <f:selectItem itemLabel="Aleman" itemValue="3" /> 
+                        <f:selectItem itemLabel="Ruso" itemValue="4" />
+                        <f:selectItem itemLabel="Italiano" itemValue="5" />
+                    </p:selectManyMenu>
+                </span><br></br><br></br>
+                <span class="ui-float-label">
+                    <p:outputLabel  value="Dias trabajados " />
+                    <p:inputText id="float-input" value="" />
+                </span><br></br><br></br>
+                <p:button value="Bookmark" style="margin-right:20px;">
+                    <f:param name="productId" value="10" />
+                </p:button>
+            </div>
+        </div>
+    </h:body>
+</html>
