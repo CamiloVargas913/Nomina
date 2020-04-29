@@ -6,6 +6,8 @@
 package edu.unicundi.nomina;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 
@@ -14,15 +16,17 @@ import javax.enterprise.context.SessionScoped;
  * @author PROFESIONAL
  */
 @Named(value = "index")
-@SessionScoped
+@RequestScoped
 public class Index implements Serializable{
     private String nombre;
     private String apellido;
     private int documento;
     private String fechaNacimiento;
     private String estudios;
-    private String idiomas[];
+    private ArrayList idiomas;
     private int diasTrabajados;
+
+    
     
     public Index() {
     }
@@ -30,6 +34,13 @@ public class Index implements Serializable{
     public String vista (){
         System.out.println("redireccionando");
         return "salario";
+    }
+    public ArrayList getIdiomas() {
+        return idiomas;
+    }
+
+    public void setIdiomas(ArrayList idiomas) {
+        this.idiomas = idiomas;
     }
 
     public String getNombre() {
@@ -70,14 +81,6 @@ public class Index implements Serializable{
 
     public void setEstudios(String estudios) {
         this.estudios = estudios;
-    }
-
-    public String[] getIdiomas() {
-        return idiomas;
-    }
-
-    public void setIdiomas(String[] idiomas) {
-        this.idiomas = idiomas;
     }
 
     public int getDiasTrabajados() {

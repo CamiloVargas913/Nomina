@@ -6,6 +6,8 @@
 package edu.unicundi.nomina;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
@@ -25,11 +27,16 @@ public class Salario implements Serializable {
     private int documento;
     private String fechaNacimiento;
     private String estudios;
-    private String idiomas[];
+    private ArrayList idiomas;
     private int diasTrabajados;
     private int sueldo;
 
     public Salario() {
+
+    }
+    
+    @PostConstruct
+     public void Salario() {
         this.Nombre = data.getNombre();
         this.apellido = data.getApellido();
         this.documento = data.getDocumento();
@@ -37,10 +44,8 @@ public class Salario implements Serializable {
         this.estudios = data.getEstudios();
         this.idiomas = data.getIdiomas();
         this.diasTrabajados = data.getDiasTrabajados();
-        this.sueldo = 0;
-
+        this.sueldo = 0;       
     }
-    
 
     public Index getData() {
         return data;
@@ -90,11 +95,11 @@ public class Salario implements Serializable {
         this.estudios = estudios;
     }
 
-    public String[] getIdiomas() {
+    public ArrayList getIdiomas() {
         return idiomas;
     }
 
-    public void setIdiomas(String[] idiomas) {
+    public void setIdiomas(ArrayList idiomas) {
         this.idiomas = idiomas;
     }
 
