@@ -11,6 +11,7 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.ViewScoped;
 
 /**
  *
@@ -30,13 +31,14 @@ public class Salario implements Serializable {
     private ArrayList idiomas;
     private int diasTrabajados;
     private int sueldo;
+    private int salarioBase;
 
     public Salario() {
-
+        
     }
-    
+
     @PostConstruct
-     public void Salario() {
+    public void Salario() {
         this.Nombre = data.getNombre();
         this.apellido = data.getApellido();
         this.documento = data.getDocumento();
@@ -44,7 +46,34 @@ public class Salario implements Serializable {
         this.estudios = data.getEstudios();
         this.idiomas = data.getIdiomas();
         this.diasTrabajados = data.getDiasTrabajados();
-        this.sueldo = 0;       
+        this.sueldo = 0;
+        this.salarioBase = 30000 * this.diasTrabajados;
+        calcularSalario();
+    }
+
+    public void calcularSalario() {
+        switch (this.estudios) {
+            case "Primaria":
+                this.salarioBase += 0;
+                break;
+            case "Secundaria":
+                this.salarioBase += 0;
+                break;
+            case "Tecnico":
+                this.salarioBase += 5000;
+                break;
+            case "Tecnologo":
+                this.salarioBase += 15000;
+                break;
+            case "Profesional":
+                this.salarioBase += 30000;
+                break;
+            case "Magister":
+                this.salarioBase += 40000;
+                break;
+        }
+        this.salarioBase += (this.idiomas.size() * 10000);
+        this.sueldo = this.salarioBase;
     }
 
     public Index getData() {

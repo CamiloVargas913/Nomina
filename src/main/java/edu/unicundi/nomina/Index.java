@@ -9,7 +9,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
 
 /**
  *
@@ -29,6 +28,7 @@ public class Index implements Serializable{
     
     
     public Index() {
+
     }
     
     public String vista (){
