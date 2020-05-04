@@ -4,59 +4,57 @@
       xmlns:p="http://primefaces.org/ui" xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head></h:head>
     <h:body>
-        <h:form>
+        <div class="ui-g-4"></div>
+        <div class="ui-g-4">
+            <h:form>
+                <h3>Ingrese sus datos</h3>
+                <span class="ui-float-label">
+                    <p:outputLabel  value="Nombre: " />
+                    <p:inputText  value="#{index.nombre}" />
+                </span><br></br><br></br>
+                <span class="ui-float-label">
+                    <p:outputLabel  value="Apellido: " />
+                    <p:inputText  value="#{index.apellido}" />
+                </span><br></br><br></br>
+                <span class="ui-float-label">
+                    <p:outputLabel  value="Numero de documento: " />
+                    <p:inputText value="#{index.documento}" />
+                </span><br></br><br></br>
+                <span class="ui-float-label">
+                    <p:outputLabel  value="Fecha nacimiento: " />
+                    <p:calendar id="fechaInicio" value="#{index.fechaNacimiento}" showOn="button" />
+                </span><br></br><br></br>
+                <span class="ui-float-label">
+                    <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+                        <p:outputLabel for="console" value="Nivel de estudios: " />
+                        <p:selectOneMenu id="console" value="#{index.estudios}" style="width:125px">
+                            <f:selectItem itemLabel="Primaria" itemValue="Primaria" />
+                            <f:selectItem itemLabel="Secundaria" itemValue="Secundaria" />
+                            <f:selectItem itemLabel="Tecnico" itemValue="Tecnico" />
+                            <f:selectItem itemLabel="Tecnologo" itemValue="Tecnologo" />
+                            <f:selectItem itemLabel="Profesional" itemValue="Profesional" />
+                            <f:selectItem itemLabel="Magister" itemValue="Magister" />
+                        </p:selectOneMenu>
+                    </h:panelGrid>
+                </span>
+                <span class="ui-float-label">
+                    <p:outputLabel for="console" value="Idiomas: " />
+                    <p:selectManyMenu id="basic" value="#{index.idiomas}">
+                        <f:selectItem itemLabel="Ninguno" itemValue="Ninguno" />
+                        <f:selectItem itemLabel="Ingles" itemValue="Ingles" />
+                        <f:selectItem itemLabel="Frances" itemValue="Frances" />
+                        <f:selectItem itemLabel="Aleman" itemValue="Aleman" /> 
+                        <f:selectItem itemLabel="Ruso" itemValue="Ruso" />
+                        <f:selectItem itemLabel="Italiano" itemValue="Italiano" />
+                    </p:selectManyMenu>
+                </span><br></br><br></br>
+                <span class="ui-float-label">
+                    <p:outputLabel  value="Dias trabajados " />
+                    <p:inputText value="#{index.diasTrabajados}" />
+                </span><br></br><br></br>
+                <p:commandButton value="Calcular" action="#{index.vista}" style="margin-right:20px;" styleClass="ui-priority-primary" />
 
-
-            <div class="ui-g">
-                <div class="ui-g-4">
-                    <h3>Ingrese sus datos</h3>
-                    <span class="ui-float-label">
-                        <p:outputLabel  value="Nombre: " />
-                        <p:inputText  value="#{index.nombre}" />
-                    </span><br></br><br></br>
-                    <span class="ui-float-label">
-                        <p:outputLabel  value="Apellido: " />
-                        <p:inputText  value="#{index.apellido}" />
-                    </span><br></br><br></br>
-                    <span class="ui-float-label">
-                        <p:outputLabel  value="Numero de documento: " />
-                        <p:inputText value="#{index.documento}" />
-                    </span><br></br><br></br>
-                    <span class="ui-float-label">
-                        <p:outputLabel  value="Fecha nacimiento: " />
-                        <p:calendar id="german" value="#{index.fechaNacimiento}" locale="de" navigator="true" pattern="yyyy-MMM-dd" />
-
-                    </span><br></br><br></br>
-                    <span class="ui-float-label">
-                        <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
-                            <p:outputLabel for="console" value="Nivel de estudios: " />
-                            <p:selectOneMenu id="console" value="#{index.estudios}" style="width:125px">
-                                <f:selectItem itemLabel="Primaria" itemValue="Primaria" />
-                                <f:selectItem itemLabel="Secundaria" itemValue="Secundaria" />
-                                <f:selectItem itemLabel="Tecnico" itemValue="Tecnico" />
-                                <f:selectItem itemLabel="Tecnologo" itemValue="Tecnologo" />
-                                <f:selectItem itemLabel="Profesional" itemValue="Profesional" />
-                                <f:selectItem itemLabel="Magister" itemValue="Magister" />
-                            </p:selectOneMenu>
-                        </h:panelGrid>
-                    </span><br></br><br></br>
-                    <span class="ui-float-label">
-                        <p:selectManyMenu id="basic" value="#{index.idiomas}">
-                            <f:selectItem itemLabel="Ninguno" itemValue="Ninguno" />
-                            <f:selectItem itemLabel="Ingles" itemValue="Ingles" />
-                            <f:selectItem itemLabel="Frances" itemValue="Frances" />
-                            <f:selectItem itemLabel="Aleman" itemValue="Aleman" /> 
-                            <f:selectItem itemLabel="Ruso" itemValue="Ruso" />
-                            <f:selectItem itemLabel="Italiano" itemValue="Italiano" />
-                        </p:selectManyMenu>
-                    </span><br></br><br></br>
-                    <span class="ui-float-label">
-                        <p:outputLabel  value="Dias trabajados " />
-                        <p:inputText value="#{index.diasTrabajados}" />
-                    </span><br></br><br></br>
-                    <p:commandButton value="Ajax Submit" action="#{index.vista}" style="margin-right:20px;" styleClass="ui-priority-primary" />
-                </div>
-            </div>
-        </h:form>
+            </h:form>
+        </div>
     </h:body>
 </html>

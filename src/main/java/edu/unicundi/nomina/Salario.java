@@ -7,6 +7,7 @@ package edu.unicundi.nomina;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
@@ -34,7 +35,7 @@ public class Salario implements Serializable {
     private int salarioBase;
 
     public Salario() {
-        
+
     }
 
     @PostConstruct
@@ -72,8 +73,19 @@ public class Salario implements Serializable {
                 this.salarioBase += 40000;
                 break;
         }
-        this.salarioBase += (this.idiomas.size() * 10000);
+        for (int i = 0; i < this.idiomas.size(); i++) {
+            if (this.idiomas.get(i).equals("Ninguno")) {
+                System.out.println("No ha seleccionado ningun idioma o selecciono ninguno y otro");
+                System.out.println(this.salarioBase);
+                break;
+            } else {
+                this.salarioBase += (this.idiomas.size() * 10000);
+                break;
+            }
+
+        }
         this.sueldo = this.salarioBase;
+        System.out.println("Sueldo:" + this.sueldo);
     }
 
     public Index getData() {

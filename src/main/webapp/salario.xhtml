@@ -2,20 +2,33 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        <h3>Su salario es:</h3>
-        <p:outputLabel value="#{salario.sueldo}"></p:outputLabel> <br></br>
-        <p:outputLabel value="#{salario.nombre} #{salario.apellido}"></p:outputLabel> <br></br>
-        <p:outputLabel value="#{salario.documento}"></p:outputLabel> <br></br>
-        <p:outputLabel value="#{salario.fechaNacimiento}"></p:outputLabel> <br></br>
-        <p:outputLabel value="#{salario.estudios}"></p:outputLabel> <br></br>
-        <p:outputLabel value="#{salario.idiomas}"></p:outputLabel> <br></br>
-        <p:outputLabel value="#{salario.diasTrabajados}"></p:outputLabel> <br></br>
+        <div class="ui-g-4"></div>
+        <div class="ui-g-4"
+            <p:panelGrid columns="2" layout="grid">
+                <f:facet name="header">
+                    Su sueldo es: $#{salario.sueldo}
+                </f:facet>
+                <h:outputLabel value="Nombre: " />
+                <p:outputLabel value="#{salario.nombre} #{salario.apellido}"/> 
+                <h:outputLabel value="Numero de documento: " />
+                <p:outputLabel value="#{salario.documento}"/> 
+                <h:outputLabel value="Fecha nacimiento: " />
+                <p:outputLabel value="#{salario.fechaNacimiento}"/> 
+                <h:outputLabel value="Nivel de estudios: " />
+                <p:outputLabel value="#{salario.estudios}"/> 
+                <h:outputLabel value="Idiomas: " />
+                <p:outputLabel value="#{salario.idiomas}"/>
+                <h:outputLabel value="Dias trabajados: " />
+                <p:outputLabel value="#{salario.diasTrabajados}"/>
 
+            </p:panelGrid>
+        </div>
     </h:body>
 </html>
 
