@@ -37,7 +37,7 @@ public class Index implements Serializable {
     /**
      * variable para almacenar la fecha de nacimiento
      */
-    private String fechaNacimiento;
+    private Date fechaNacimiento;
     /**
      * variable para almacenar el nivel de estudios
      */
@@ -65,6 +65,7 @@ public class Index implements Serializable {
      */
     public String vista() {
         System.out.println("redireccionando");
+        System.out.println(this.fechaNacimiento);
         return "salario";
     }
 
@@ -145,7 +146,7 @@ public class Index implements Serializable {
      *
      * @return String
      */
-    public String getFechaNacimiento() {
+    public Date getFechaNacimiento() {
         return fechaNacimiento;
     }
 
@@ -154,7 +155,7 @@ public class Index implements Serializable {
      *
      * @param fechaNacimiento variable para guardar la fecha de nacimiento
      */
-    public void setFechaNacimiento(String fechaNacimiento) {
+    public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
