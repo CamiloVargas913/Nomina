@@ -9,8 +9,8 @@
     </h:head>
     <h:body>
         <div class="ui-g-4"></div>
-        <div class="ui-g-4"
-            <p:panelGrid columns="2" layout="grid">
+        <div class="ui-g-5">
+            <p:panelGrid columns="2">
                 <f:facet name="header">
                     Su sueldo es: $#{salario.sueldo}
                 </f:facet>
@@ -19,11 +19,13 @@
                 <h:outputLabel value="Numero de documento: " />
                 <p:outputLabel value="#{salario.documento}"/> 
                 <h:outputLabel value="Fecha nacimiento: " />
-                <p:outputLabel value="#{salario.fechaNacimiento}"/> 
+                <h:outputText value="#{salario.fechaNacimiento}"/>
                 <h:outputLabel value="Nivel de estudios: " />
                 <p:outputLabel value="#{salario.estudios}"/> 
                 <h:outputLabel value="Idiomas: " />
-                <p:outputLabel value="#{salario.idiomas}"/>
+                <p:repeat value="#{salario.idiomas}" var="idioma">
+                    <p:outputLabel value="#{idioma}"/> <br></br>
+                </p:repeat>                
                 <h:outputLabel value="Dias trabajados: " />
                 <p:outputLabel value="#{salario.diasTrabajados}"/>
 
